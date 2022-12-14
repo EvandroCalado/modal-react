@@ -1,0 +1,144 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --size: 1.25rem;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+.btn {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+.btn:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.btn:hover {
+  background-color: #1e1e1e;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  .btn {
+    background-color: #f9f9f9;
+  }
+}
+
+.page {
+  background-image: var(--bg-image);
+  background-size: cover;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.backdrop {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(0.3rem);
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.backdrop .modal {
+  background-color: #e1e1e1;
+  color: #1e1e1e;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  max-width: 75vw;
+  max-height: 90vh;
+  position: relative;
+}
+
+.backdrop .modal .modal-close {
+  width: var(--size);
+  height: var(--size);
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: #111;
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  display: flex;
+}
+
+.backdrop .modal .modal-close::after,
+.backdrop .modal .modal-close::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: var(--size);
+  height: calc(var(--size) * 0.1);
+  background-color: currentColor;
+  border-radius: 0.125rem;
+  border-radius: 999px;
+}
+
+.backdrop .modal .modal-close::before {
+  transform: rotate(45deg);
+  top: calc(var(--size) / 2);
+}
+
+.backdrop .modal .modal-close::after {
+  transform: rotate(-45deg);
+  top: calc(var(--size) / 2);
+}
+
